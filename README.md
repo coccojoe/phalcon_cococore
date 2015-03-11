@@ -9,12 +9,13 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d 
 RewriteCond %{REQUEST_FILENAME} !-f 
 RewriteRule ^(.*)$ index.php?_url=/$1 [QSA,L]
+
 Nginx Rewrite 
 --------------------- 
 try_files $uri $uri/ @rewrite;
 
 location @rewrite { 
-rewrite ^/(.*)$ /index.php?_url=/$1; 
+	rewrite ^/(.*)$ /index.php?_url=/$1; 
 }
 
 More information : http://docs.phalconphp.com/en/latest/index.html
